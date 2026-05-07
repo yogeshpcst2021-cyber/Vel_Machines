@@ -1,0 +1,253 @@
+import { Link } from 'react-router-dom';
+
+import {
+  MapPin,
+  Phone,
+  Mail,
+  ArrowUpRight,
+  Linkedin,
+  Facebook,
+  Twitter,
+} from 'lucide-react';
+
+const footerLinks = {
+  company: [
+    { name: 'About Us', path: '/about' },
+    { name: 'Divisions', path: '/divisions' },
+    { name: 'Careers', path: '/careers' },
+    { name: 'News', path: '/news' },
+  ],
+
+  products: [
+    { name: 'CNC Machines', path: '/products' },
+    { name: 'Lathe Machines', path: '/products' },
+    { name: 'Milling Machines', path: '/products' },
+    { name: 'Grinding Machines', path: '/products' },
+  ],
+
+  support: [
+    { name: 'Services', path: '/services' },
+    { name: 'Contact', path: '/contact' },
+    { name: 'Enquiry', path: '/contact' },
+  ],
+};
+
+export default function Footer() {
+  return (
+    <footer className="relative border-t border-[#D6C7B2] bg-[#F5F0E6]/95 backdrop-blur-xl">
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+
+          {/* Brand */}
+          <div className="lg:col-span-2">
+
+            <Link
+              to="/"
+              className="inline-flex items-center gap-4 mb-6 group"
+            >
+
+              <img
+                src="/images/logo.png"
+                alt="Vel Machines Logo"
+                className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+
+              <div className="flex flex-col">
+
+                <span className="text-[#2B2B2B] font-bold text-2xl tracking-tight leading-none">
+                  Vel Machines
+                </span>
+
+                <span className="text-[#2563EB] text-[10px] tracking-[0.2em] uppercase mt-1 font-semibold">
+                  Industrial Excellence
+                </span>
+
+              </div>
+
+            </Link>
+
+            <p className="text-[#5C4B3B] text-sm leading-relaxed mb-6 max-w-sm">
+              India's premier industrial machinery solutions
+              provider. 28+ years of engineering excellence
+              delivering cutting-edge machines across the
+              nation.
+            </p>
+
+            {/* Social Icons */}
+            <div className="flex gap-3">
+
+              {[Linkedin, Facebook, Twitter].map(
+                (Icon, i) => (
+                  <a
+                    key={i}
+                    href="#"
+                    className="w-10 h-10 rounded-xl bg-[#FAF6EF] border border-[#D6C7B2] flex items-center justify-center text-[#5C4B3B] hover:text-[#2563EB] hover:border-[#2563EB]/30 hover:bg-[#2563EB]/5 transition-all duration-300"
+                  >
+                    <Icon size={16} />
+                  </a>
+                )
+              )}
+
+            </div>
+
+          </div>
+
+          {/* Company */}
+          <div>
+
+            <h4 className="text-[#2B2B2B] font-semibold mb-4 text-sm uppercase tracking-wider">
+              Company
+            </h4>
+
+            <ul className="space-y-3">
+
+              {footerLinks.company.map((link) => (
+                <li key={link.path + link.name}>
+
+                  <Link
+                    to={link.path}
+                    className="text-[#5C4B3B] text-sm hover:text-[#2563EB] transition-colors flex items-center gap-1 group"
+                  >
+                    {link.name}
+
+                    <ArrowUpRight
+                      size={12}
+                      className="opacity-0 group-hover:opacity-100 transition-opacity"
+                    />
+
+                  </Link>
+
+                </li>
+              ))}
+
+            </ul>
+
+          </div>
+
+          {/* Products */}
+          <div>
+
+            <h4 className="text-[#2B2B2B] font-semibold mb-4 text-sm uppercase tracking-wider">
+              Products
+            </h4>
+
+            <ul className="space-y-3">
+
+              {footerLinks.products.map((link) => (
+                <li key={link.path + link.name}>
+
+                  <Link
+                    to={link.path}
+                    className="text-[#5C4B3B] text-sm hover:text-[#2563EB] transition-colors flex items-center gap-1 group"
+                  >
+                    {link.name}
+
+                    <ArrowUpRight
+                      size={12}
+                      className="opacity-0 group-hover:opacity-100 transition-opacity"
+                    />
+
+                  </Link>
+
+                </li>
+              ))}
+
+            </ul>
+
+          </div>
+
+          {/* Contact */}
+          <div>
+
+            <h4 className="text-[#2B2B2B] font-semibold mb-4 text-sm uppercase tracking-wider">
+              Contact
+            </h4>
+
+            <ul className="space-y-4">
+
+              <li className="flex items-start gap-3">
+
+                <MapPin
+                  size={16}
+                  className="text-[#2563EB] mt-0.5 shrink-0"
+                />
+
+                <span className="text-[#5C4B3B] text-sm">
+                  Coimbatore, Chennai, Bangalore,
+                  Pune, Delhi
+                </span>
+
+              </li>
+
+              <li className="flex items-center gap-3">
+
+                <Phone
+                  size={16}
+                  className="text-[#2563EB] shrink-0"
+                />
+
+                <a
+                  href="tel:+919789360111"
+                  className="text-[#5C4B3B] text-sm hover:text-[#2563EB] transition-colors"
+                >
+                  +91 9789 360 111
+                </a>
+
+              </li>
+
+              <li className="flex items-center gap-3">
+
+                <Mail
+                  size={16}
+                  className="text-[#2563EB] shrink-0"
+                />
+
+                <a
+                  href="mailto:info@velmachines.com"
+                  className="text-[#5C4B3B] text-sm hover:text-[#2563EB] transition-colors"
+                >
+                  info@velmachines.com
+                </a>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+        {/* Bottom */}
+        <div className="mt-12 pt-8 border-t border-[#D6C7B2] flex flex-col md:flex-row items-center justify-between gap-4">
+
+          <p className="text-[#5C4B3B] text-sm">
+            &copy; {new Date().getFullYear()} Vel Machines.
+            All rights reserved.
+          </p>
+
+          <div className="flex gap-6">
+
+            <a
+              href="#"
+              className="text-[#5C4B3B] text-sm hover:text-[#2563EB] transition-colors"
+            >
+              Privacy Policy
+            </a>
+
+            <a
+              href="#"
+              className="text-[#5C4B3B] text-sm hover:text-[#2563EB] transition-colors"
+            >
+              Terms of Service
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </footer>
+  );
+}
