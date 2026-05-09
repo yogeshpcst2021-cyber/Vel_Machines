@@ -61,12 +61,13 @@ export default function Careers() {
   };
 
   return (
-    <div className="pt-24 pb-12 bg-[#FAF6EF]">
+    <div className="pt-24 pb-12 bg-background">
 
       {/* Hero */}
       <section className="relative py-20 overflow-hidden">
 
         <div className="absolute inset-0">
+
           <img
             src="/images/factory-floor.jpg"
             alt="Careers"
@@ -74,31 +75,39 @@ export default function Careers() {
             style={{ objectPosition: 'center 30%' }}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F5F0E6]/90 via-[#FAF6EF]/80 to-[#FAF6EF]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-surface/90 via-background/80 to-background" />
+
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-3xl mx-auto">
 
-            <h1 className="text-4xl md:text-6xl font-bold text-[#2B2B2B] mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
+
               Join{' '}
-              <span className="bg-gradient-to-r from-[#2563EB] to-[#38BDF8] bg-clip-text text-transparent">
+
+              <span className="text-gradient-primary">
                 Our Team
               </span>
+
             </h1>
 
-            <p className="text-[#5C4B3B] text-lg leading-relaxed">
+            <p className="text-text-secondary text-lg leading-relaxed">
+
               Be part of India's leading industrial machinery company.
               We're always looking for talented individuals.
+
             </p>
 
           </div>
+
         </div>
+
       </section>
 
       {/* Jobs */}
-      <section className="py-12 bg-[#F5F0E6]">
+      <section className="py-12 bg-surface">
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -117,11 +126,11 @@ export default function Careers() {
 
                     <div className="flex-1">
 
-                      <h3 className="text-[#2B2B2B] font-semibold text-xl mb-2 group-hover:text-[#2563EB] transition-colors">
+                      <h3 className="text-text-primary font-semibold text-xl mb-2 group-hover:text-primary transition-colors">
                         {job.title}
                       </h3>
 
-                      <div className="flex flex-wrap items-center gap-4 text-sm text-[#5C4B3B]">
+                      <div className="flex flex-wrap items-center gap-4 text-sm text-text-secondary">
 
                         <span className="flex items-center gap-1">
                           <Briefcase size={14} />
@@ -140,7 +149,7 @@ export default function Careers() {
 
                       </div>
 
-                      <p className="text-[#5C4B3B] text-sm mt-3 line-clamp-2">
+                      <p className="text-text-secondary text-sm mt-3 line-clamp-2">
                         {job.description}
                       </p>
 
@@ -148,7 +157,7 @@ export default function Careers() {
 
                     <button
                       onClick={() => setSelectedJob(job)}
-                      className="shrink-0 px-6 py-3 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 text-[#2563EB] font-medium hover:bg-[#2563EB]/20 transition-all duration-300"
+                      className="shrink-0 px-6 py-3 rounded-xl bg-primary/10 border border-primary/20 text-primary font-medium hover:bg-primary/20 transition-all duration-300"
                     >
                       Apply Now
                     </button>
@@ -167,15 +176,19 @@ export default function Careers() {
 
                   <div className="p-6 md:p-8 space-y-3">
 
-                    <div className="h-6 w-1/3 bg-[#E9E1D3] rounded" />
+                    <div className="h-6 w-1/3 bg-beige-dark rounded" />
 
                     <div className="flex gap-4">
-                      <div className="h-4 w-24 bg-[#EFE7DA] rounded" />
-                      <div className="h-4 w-24 bg-[#EFE7DA] rounded" />
-                      <div className="h-4 w-24 bg-[#EFE7DA] rounded" />
+
+                      <div className="h-4 w-24 bg-beige-soft rounded" />
+
+                      <div className="h-4 w-24 bg-beige-soft rounded" />
+
+                      <div className="h-4 w-24 bg-beige-soft rounded" />
+
                     </div>
 
-                    <div className="h-4 w-full bg-[#EFE7DA] rounded" />
+                    <div className="h-4 w-full bg-beige-soft rounded" />
 
                   </div>
 
@@ -186,6 +199,7 @@ export default function Careers() {
           )}
 
         </div>
+
       </section>
 
       {/* Modal */}
@@ -197,12 +211,12 @@ export default function Careers() {
 
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-lg rounded-3xl bg-[#FAF6EF] border border-[#D6C7B2] shadow-2xl p-8"
+            className="relative w-full max-w-lg rounded-3xl bg-background border border-border-light shadow-2xl p-8"
           >
 
             <button
               onClick={() => setSelectedJob(null)}
-              className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-[#EFE7DA] border border-[#D6C7B2] flex items-center justify-center text-[#5C4B3B] hover:text-[#2B2B2B] transition-colors"
+              className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-beige-soft border border-border-light flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors"
             >
               <X size={18} />
             </button>
@@ -212,11 +226,11 @@ export default function Careers() {
 
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
 
-                <h3 className="text-[#2B2B2B] font-semibold text-xl mb-2">
+                <h3 className="text-text-primary font-semibold text-xl mb-2">
                   Application Submitted!
                 </h3>
 
-                <p className="text-[#5C4B3B]">
+                <p className="text-text-secondary">
                   We'll get back to you soon.
                 </p>
 
@@ -224,18 +238,19 @@ export default function Careers() {
             ) : (
               <>
 
-                <h3 className="text-[#2B2B2B] font-semibold text-xl mb-1">
+                <h3 className="text-text-primary font-semibold text-xl mb-1">
                   Apply for {selectedJob.title}
                 </h3>
 
-                <p className="text-[#5C4B3B] text-sm mb-6">
+                <p className="text-text-secondary text-sm mb-6">
                   {selectedJob.department} &middot; {selectedJob.location}
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
 
                   <div>
-                    <label className="block text-[#5C4B3B] text-sm mb-2">
+
+                    <label className="block text-text-secondary text-sm mb-2">
                       Full Name
                     </label>
 
@@ -249,13 +264,15 @@ export default function Careers() {
                           name: e.target.value,
                         })
                       }
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#D6C7B2] text-[#2B2B2B] placeholder-[#A08B78] focus:outline-none focus:border-[#2563EB]/50 transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-border-light text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-primary/50 transition-all"
                       placeholder="John Doe"
                     />
+
                   </div>
 
                   <div>
-                    <label className="block text-[#5C4B3B] text-sm mb-2">
+
+                    <label className="block text-text-secondary text-sm mb-2">
                       Email
                     </label>
 
@@ -269,13 +286,15 @@ export default function Careers() {
                           email: e.target.value,
                         })
                       }
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#D6C7B2] text-[#2B2B2B] placeholder-[#A08B78] focus:outline-none focus:border-[#2563EB]/50 transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-border-light text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-primary/50 transition-all"
                       placeholder="john@example.com"
                     />
+
                   </div>
 
                   <div>
-                    <label className="block text-[#5C4B3B] text-sm mb-2">
+
+                    <label className="block text-text-secondary text-sm mb-2">
                       Phone
                     </label>
 
@@ -289,13 +308,15 @@ export default function Careers() {
                           phone: e.target.value,
                         })
                       }
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#D6C7B2] text-[#2B2B2B] placeholder-[#A08B78] focus:outline-none focus:border-[#2563EB]/50 transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-border-light text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-primary/50 transition-all"
                       placeholder="+91 98765 43210"
                     />
+
                   </div>
 
                   <div>
-                    <label className="block text-[#5C4B3B] text-sm mb-2">
+
+                    <label className="block text-text-secondary text-sm mb-2">
                       Message / Cover Letter
                     </label>
 
@@ -308,21 +329,21 @@ export default function Careers() {
                           message: e.target.value,
                         })
                       }
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#D6C7B2] text-[#2B2B2B] placeholder-[#A08B78] focus:outline-none focus:border-[#2563EB]/50 transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-border-light text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-primary/50 transition-all resize-none"
                       placeholder="Tell us why you're a great fit..."
                     />
+
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full px-6 py-3.5 rounded-xl font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#2563EB]/20"
-                    style={{
-                      background:
-                        'linear-gradient(135deg, #2563EB, #38BDF8)',
-                    }}
+                    className="w-full px-6 py-3.5 rounded-xl font-semibold text-white transition-all duration-300 hover:shadow-lg gradient-primary"
                   >
+
                     <Send size={18} className="inline mr-2" />
+
                     Submit Application
+
                   </button>
 
                 </form>
@@ -331,6 +352,7 @@ export default function Careers() {
             )}
 
           </div>
+
         </div>
       )}
     </div>

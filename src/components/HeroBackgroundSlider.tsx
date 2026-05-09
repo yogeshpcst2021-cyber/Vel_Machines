@@ -52,13 +52,13 @@ export default function HeroBackgroundSlider() {
       ))}
 
       {/* Premium Beige Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#F5F0E6]/95 via-[#F5F0E6]/70 to-[#FAF6EF]/45" />
+      <div className="absolute inset-0 bg-gradient-to-r from-surface/95 via-surface/70 to-background/45" />
 
       {/* Soft Bottom Fade */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#FAF6EF]/95 via-transparent to-[#F5F0E6]/35" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-transparent to-surface/35" />
 
       {/* Luxury Warm Glow */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[#E9E1D3]/10 backdrop-blur-[1px]" />
+      <div className="absolute top-0 left-0 w-full h-full bg-beige-dark/10 backdrop-blur-[1px]" />
 
       {/* Slide Indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
@@ -69,8 +69,8 @@ export default function HeroBackgroundSlider() {
             onClick={() => setCurrent(i)}
             className={`h-1 rounded-full transition-all duration-500 ${
               i === current
-                ? 'w-8 bg-[#2563EB]'
-                : 'w-4 bg-[#D6C7B2] hover:bg-[#A08B78]'
+                ? 'w-8 bg-primary'
+                : 'w-4 bg-border-light hover:bg-beige-dark'
             }`}
             aria-label={`Go to slide ${i + 1}`}
           />

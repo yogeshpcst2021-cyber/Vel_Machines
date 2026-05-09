@@ -74,11 +74,11 @@ export default function LiquidGlassShowcase() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-28 overflow-hidden bg-[#FAF6EF]"
+      className="relative py-28 overflow-hidden bg-background"
     >
 
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#F5F0E6] via-[#FAF6EF] to-[#F5F0E6]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-surface via-background to-surface" />
 
       {/* Grid Pattern */}
       <div
@@ -94,10 +94,8 @@ export default function LiquidGlassShowcase() {
 
       {/* Mouse Glow 1 */}
       <div
-        className="absolute w-[600px] h-[600px] rounded-full blur-[150px] pointer-events-none transition-all duration-700 ease-out"
+        className="absolute w-[600px] h-[600px] rounded-full blur-[150px] pointer-events-none transition-all duration-700 ease-out bg-primary/10"
         style={{
-          background:
-            'radial-gradient(circle, rgba(37,99,235,0.12), transparent 70%)',
           left: `${mousePos.x * 100}%`,
           top: `${mousePos.y * 100}%`,
           transform:
@@ -107,10 +105,8 @@ export default function LiquidGlassShowcase() {
 
       {/* Mouse Glow 2 */}
       <div
-        className="absolute w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none transition-all duration-1000 ease-out"
+        className="absolute w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none transition-all duration-1000 ease-out bg-beige-dark/50"
         style={{
-          background:
-            'radial-gradient(circle, rgba(233,225,211,0.55), transparent 70%)',
           left: `${(1 - mousePos.x) * 100}%`,
           top: `${(1 - mousePos.y) * 100}%`,
           transform:
@@ -125,70 +121,46 @@ export default function LiquidGlassShowcase() {
           {/* LEFT */}
           <div className="relative">
 
-            <div
-              className="relative rounded-3xl p-10 md:p-14 overflow-hidden"
-              style={{
-                background:
-                  'rgba(245,240,230,0.72)',
-                backdropFilter:
-                  'blur(40px) saturate(160%)',
-                WebkitBackdropFilter:
-                  'blur(40px) saturate(160%)',
-                border:
-                  '1px solid rgba(214,199,178,0.7)',
-                boxShadow:
-                  '0 10px 40px rgba(214,199,178,0.25), inset 0 1px 0 rgba(255,255,255,0.25)',
-              }}
-            >
+            <div className="relative rounded-3xl p-10 md:p-14 overflow-hidden bg-surface/70 backdrop-blur-[40px] border border-border-light shadow-[0_10px_40px_rgba(214,199,178,0.25)]">
 
               {/* Top Reflection */}
               <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
               {/* Corner Glow */}
-              <div
-                className="absolute -top-10 -right-10 w-40 h-40 rounded-full opacity-30"
-                style={{
-                  background:
-                    'radial-gradient(circle, rgba(56,189,248,0.35), transparent 70%)',
-                }}
-              />
+              <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full opacity-30 bg-primary-light/30" />
 
               <div className="relative z-10">
 
                 {/* Badge */}
                 <div className="flex items-center gap-3 mb-6">
 
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center"
-                    style={{
-                      background:
-                        'linear-gradient(135deg, #2563EB, #38BDF8)',
-                    }}
-                  >
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center gradient-primary">
+
                     <span className="text-white font-bold text-lg">
                       V
                     </span>
+
                   </div>
 
-                  <span className="text-[#5C4B3B] text-sm font-medium tracking-wide uppercase">
+                  <span className="text-text-secondary text-sm font-medium tracking-wide uppercase">
                     Next-Gen Technology
                   </span>
 
                 </div>
 
                 {/* Heading */}
-                <h2 className="text-3xl md:text-5xl font-bold text-[#2B2B2B] leading-tight mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold text-text-primary leading-tight mb-6">
 
                   Precision Engineering{' '}
 
-                  <span className="text-[#2563EB]">
+                  <span className="text-primary">
                     Redefined
                   </span>
 
                 </h2>
 
                 {/* Paragraph */}
-                <p className="text-[#5C4B3B] text-lg leading-relaxed mb-8">
+                <p className="text-text-secondary text-lg leading-relaxed mb-8">
 
                   Experience the future of industrial
                   machining with our state-of-the-art
@@ -202,13 +174,7 @@ export default function LiquidGlassShowcase() {
 
                   <Link
                     to="/products"
-                    className="group px-8 py-4 rounded-xl font-semibold text-white text-center transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
-                    style={{
-                      background:
-                        'linear-gradient(135deg, #2563EB, #38BDF8)',
-                      boxShadow:
-                        '0 6px 25px rgba(37,99,235,0.22)',
-                    }}
+                    className="group px-8 py-4 rounded-xl font-semibold text-white text-center transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 gradient-primary"
                   >
 
                     Explore CNC Range
@@ -222,13 +188,7 @@ export default function LiquidGlassShowcase() {
 
                   <Link
                     to="/contact"
-                    className="px-8 py-4 rounded-xl font-semibold text-[#2B2B2B] text-center transition-all duration-300 hover:bg-[#EFE7DA]"
-                    style={{
-                      background:
-                        'rgba(255,255,255,0.45)',
-                      border:
-                        '1px solid rgba(214,199,178,0.6)',
-                    }}
+                    className="px-8 py-4 rounded-xl font-semibold text-text-primary text-center transition-all duration-300 bg-white/40 border border-border-light hover:bg-beige-soft"
                   >
                     Request Demo
                   </Link>
@@ -240,41 +200,26 @@ export default function LiquidGlassShowcase() {
             </div>
 
             {/* Floating Card */}
-            <div
-              className="absolute -bottom-5 -right-5 md:-right-8 rounded-2xl p-5 hidden md:block"
-              style={{
-                background:
-                  'rgba(245,240,230,0.82)',
-                backdropFilter: 'blur(30px)',
-                border:
-                  '1px solid rgba(214,199,178,0.7)',
-                boxShadow:
-                  '0 10px 30px rgba(214,199,178,0.2)',
-              }}
-            >
+            <div className="absolute -bottom-5 -right-5 md:-right-8 rounded-2xl p-5 hidden md:block bg-surface/80 backdrop-blur-[30px] border border-border-light shadow-[0_10px_30px_rgba(214,199,178,0.2)]">
 
               <div className="flex items-center gap-3">
 
-                <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center"
-                  style={{
-                    background:
-                      'linear-gradient(135deg, #2563EB, #38BDF8)',
-                  }}
-                >
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center gradient-primary">
+
                   <Zap
                     size={20}
                     className="text-white"
                   />
+
                 </div>
 
                 <div>
 
-                  <p className="text-[#2B2B2B] font-bold text-lg">
+                  <p className="text-text-primary font-bold text-lg">
                     5000+
                   </p>
 
-                  <p className="text-[#5C4B3B] text-xs">
+                  <p className="text-text-secondary text-xs">
                     Machines Delivered
                   </p>
 
@@ -292,48 +237,27 @@ export default function LiquidGlassShowcase() {
             {features.map((feat) => (
               <div
                 key={feat.label}
-                className="relative rounded-2xl p-6 text-center group hover:scale-[1.03] transition-all duration-300"
-                style={{
-                  background:
-                    'rgba(245,240,230,0.7)',
-                  backdropFilter: 'blur(20px)',
-                  border:
-                    '1px solid rgba(214,199,178,0.7)',
-                }}
+                className="relative rounded-2xl p-6 text-center group hover:scale-[1.03] transition-all duration-300 bg-surface/70 backdrop-blur-[20px] border border-border-light"
               >
 
-                <div
-                  className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    background:
-                      'linear-gradient(135deg, rgba(37,99,235,0.08), transparent 60%)',
-                  }}
-                />
+                <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-primary/10 to-transparent" />
 
                 <div className="relative z-10">
 
-                  <div
-                    className="w-12 h-12 rounded-xl mx-auto mb-3 flex items-center justify-center"
-                    style={{
-                      background:
-                        'rgba(255,255,255,0.45)',
-                      border:
-                        '1px solid rgba(214,199,178,0.4)',
-                    }}
-                  >
+                  <div className="w-12 h-12 rounded-xl mx-auto mb-3 flex items-center justify-center bg-white/40 border border-border-light">
 
                     <feat.icon
                       size={22}
-                      className="text-[#2563EB]"
+                      className="text-primary"
                     />
 
                   </div>
 
-                  <p className="text-[#5C4B3B] text-xs uppercase tracking-wider mb-1">
+                  <p className="text-text-secondary text-xs uppercase tracking-wider mb-1">
                     {feat.label}
                   </p>
 
-                  <p className="text-[#2B2B2B] font-bold text-xl">
+                  <p className="text-text-primary font-bold text-xl">
                     {feat.value}
                   </p>
 
@@ -343,13 +267,7 @@ export default function LiquidGlassShowcase() {
             ))}
 
             {/* Image Card */}
-            <div
-              className="sm:col-span-3 rounded-2xl overflow-hidden relative h-60 group"
-              style={{
-                border:
-                  '1px solid rgba(214,199,178,0.7)',
-              }}
-            >
+            <div className="sm:col-span-3 rounded-2xl overflow-hidden relative h-60 group border border-border-light">
 
               <img
                 src="/images/product-cnc.jpg"
@@ -357,11 +275,11 @@ export default function LiquidGlassShowcase() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2B2B2B]/75 via-[#2B2B2B]/15 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-text-primary/80 via-text-primary/20 to-transparent" />
 
               <div className="absolute bottom-4 left-4 right-4">
 
-                <p className="text-[#F5F0E6] text-xs uppercase tracking-wider mb-1">
+                <p className="text-surface text-xs uppercase tracking-wider mb-1">
                   Featured Machine
                 </p>
 

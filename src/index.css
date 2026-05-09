@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
-
 @theme inline {
+
+  /* =========================================
+     COLORS
+  ========================================= */
 
   /* Main Backgrounds */
   --color-background: #FAF6EF;
@@ -13,11 +16,20 @@
   --color-beige-light: #FAF6EF;
   --color-beige-dark: #E9E1D3;
 
-  /* Blueprint Blues */
-  --color-blue-soft: #DBEAFE;
-  --color-blue-light: #E0F2FE;
-  --color-blue-accent: #93C5FD;
-  --color-primary: #2563EB;
+  /* Logo Gradient Colors */
+  --color-green: #29B56F;
+  --color-teal: #27C2A5;
+  --color-cyan: #32B4DC;
+
+  /* Soft Blueprint Colors */
+  --color-blue-soft: #DBF1F8;
+  --color-blue-light: #EAF8FC;
+  --color-blue-accent: #7ED3E8;
+
+  /* Brand */
+  --color-primary: #27C2A5;
+  --color-primary-light: #32B4DC;
+  --color-primary-dark: #1F9E87;
 
   /* Text */
   --color-text-primary: #1E293B;
@@ -27,14 +39,20 @@
   --color-border-light: #D6C7B2;
   --color-border-soft: #E5DDD0;
 
-  /* Shadows */
+  /* =========================================
+     SHADOWS
+  ========================================= */
+
   --shadow-premium:
-    0 10px 40px rgba(214, 199, 178, 0.25);
+    0 10px 40px rgba(39,194,165,0.10);
 
   --shadow-glow:
-    0 8px 30px rgba(147, 197, 253, 0.25);
+    0 8px 30px rgba(39,194,165,0.18);
 
-  /* Radius */
+  /* =========================================
+     RADIUS
+  ========================================= */
+
   --radius-premium: 24px;
 }
 
@@ -50,10 +68,10 @@ body {
   background:
     linear-gradient(
       135deg,
-      #FAF6EF 0%,
-      #F5F0E6 35%,
+      var(--color-background) 0%,
+      var(--color-surface) 35%,
       #F8FAFC 70%,
-      #E0F2FE 100%
+      var(--color-blue-light) 100%
     );
 
   color: var(--color-text-primary);
@@ -73,15 +91,15 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F5F0E6;
+  background: var(--color-surface);
 }
 
 ::-webkit-scrollbar-thumb {
   background:
     linear-gradient(
       to bottom,
-      #D6C7B2,
-      #93C5FD
+      var(--color-green),
+      var(--color-cyan)
     );
 
   border-radius: 999px;
@@ -91,8 +109,8 @@ body {
   background:
     linear-gradient(
       to bottom,
-      #CDBAA0,
-      #60A5FA
+      var(--color-teal),
+      var(--color-cyan)
     );
 }
 
@@ -101,8 +119,8 @@ body {
 ========================================= */
 
 ::selection {
-  background: rgba(147, 197, 253, 0.35);
-  color: #1E293B;
+  background: rgba(39,194,165,0.22);
+  color: var(--color-text-primary);
 }
 
 /* =========================================
@@ -136,15 +154,15 @@ img {
 }
 
 /* =========================================
-   PREMIUM GLASS EFFECT
+   GLASS EFFECT
 ========================================= */
 
 .glass {
   background:
     linear-gradient(
       145deg,
-      rgba(255,255,255,0.7),
-      rgba(219,234,254,0.35)
+      rgba(255,255,255,0.78),
+      rgba(219,241,248,0.28)
     );
 
   backdrop-filter: blur(20px);
@@ -153,7 +171,7 @@ img {
   border: 1px solid rgba(214,199,178,0.5);
 
   box-shadow:
-    0 10px 40px rgba(214,199,178,0.18);
+    0 10px 40px rgba(39,194,165,0.08);
 }
 
 /* =========================================
@@ -164,17 +182,17 @@ img {
   background:
     linear-gradient(
       135deg,
-      #FAF6EF 0%,
-      #DBEAFE 45%,
-      #93C5FD 100%
+      #29B56F 0%,
+      #27C2A5 45%,
+      #32B4DC 100%
     );
 
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.35);
 
-  color: #1E293B;
+  color: white;
 
   box-shadow:
-    0 8px 30px rgba(147,197,253,0.18);
+    0 8px 30px rgba(39,194,165,0.22);
 
   transition: all 0.4s ease;
 }
@@ -183,18 +201,99 @@ img {
   transform: translateY(-2px) scale(1.03);
 
   box-shadow:
-    0 12px 40px rgba(147,197,253,0.28);
+    0 12px 40px rgba(39,194,165,0.32);
 }
 
 /* =========================================
-   PREMIUM CARD HOVER
+   PRIMARY GRADIENT
 ========================================= */
 
+.gradient-primary {
+  background:
+    linear-gradient(
+      135deg,
+      #29B56F 0%,
+      #27C2A5 45%,
+      #32B4DC 100%
+    );
+}
+
+/* =========================================
+   BRAND GRADIENT
+========================================= */
+
+.gradient-brand {
+  background:
+    linear-gradient(
+      135deg,
+      #29B56F 0%,
+      #27C2A5 50%,
+      #32B4DC 100%
+    );
+}
+
+/* =========================================
+   BLUEPRINT GRADIENT
+========================================= */
+
+.gradient-blueprint {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(41,181,111,0.95),
+      rgba(50,180,220,0.92)
+    );
+}
+
+/* =========================================
+   HERO / SECTION OVERLAYS
+========================================= */
+
+.gradient-overlay {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(250,246,239,0.92),
+      rgba(245,240,230,0.72),
+      rgba(39,194,165,0.08)
+    );
+}
+
+/* =========================================
+   TEXT GRADIENT
+========================================= */
+
+.text-gradient-primary {
+  background:
+    linear-gradient(
+      to right,
+      #29B56F,
+      #27C2A5,
+      #32B4DC
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+  color: transparent;
+}
+
+/* =========================================
+   PREMIUM CARD
+========================================= */
+
+.card-premium {
+  transition:
+    all 0.4s ease;
+}
+
 .card-premium:hover {
-  border-color: rgba(37,99,235,0.25);
+  border-color:
+    rgba(39,194,165,0.25);
 
   box-shadow:
-    0 12px 40px rgba(147,197,253,0.15);
+    0 12px 40px rgba(39,194,165,0.15);
 
   transform:
     translateY(-4px)
@@ -202,7 +301,7 @@ img {
 }
 
 /* =========================================
-   BLUEPRINT BACKGROUND
+   BLUEPRINT GRID
 ========================================= */
 
 .blueprint-bg {
@@ -217,12 +316,12 @@ img {
 
   background-image:
     linear-gradient(
-      rgba(90,70,50,0.04) 1px,
+      rgba(39,194,165,0.04) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(90,70,50,0.04) 1px,
+      rgba(39,194,165,0.04) 1px,
       transparent 1px
     );
 
@@ -253,5 +352,64 @@ img {
 }
 
 .animate-soft-pulse {
-  animation: softPulse 5s ease-in-out infinite;
+  animation:
+    softPulse 5s ease-in-out infinite;
+}
+
+/* =========================================
+   REUSABLE UTILITIES
+========================================= */
+
+.bg-main-gradient {
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-background) 0%,
+      var(--color-surface) 35%,
+      #F8FAFC 70%,
+      var(--color-blue-light) 100%
+    );
+}
+
+.border-soft {
+  border-color:
+    var(--color-border-soft);
+}
+
+.border-light {
+  border-color:
+    var(--color-border-light);
+}
+
+.text-primary-custom {
+  color:
+    var(--color-text-primary);
+}
+
+.text-secondary-custom {
+  color:
+    var(--color-text-secondary);
+}
+
+.bg-surface-custom {
+  background:
+    var(--color-surface);
+}
+
+.bg-background-custom {
+  background:
+    var(--color-background);
+}
+
+/* =========================================
+   SOFT TECH GRADIENT
+========================================= */
+
+.gradient-soft-tech {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(39,194,165,0.08),
+      rgba(50,180,220,0.05)
+    );
 }

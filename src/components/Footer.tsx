@@ -34,7 +34,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-[#D6C7B2] bg-[#F5F0E6]/95 backdrop-blur-xl">
+    <footer className="relative border-t border-border-light bg-surface/95 backdrop-blur-xl">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
@@ -56,11 +56,11 @@ export default function Footer() {
 
               <div className="flex flex-col">
 
-                <span className="text-[#2B2B2B] font-bold text-2xl tracking-tight leading-none">
+                <span className="text-text-primary font-bold text-2xl tracking-tight leading-none">
                   Vel Machines
                 </span>
 
-                <span className="text-[#2563EB] text-[10px] tracking-[0.2em] uppercase mt-1 font-semibold">
+                <span className="text-primary text-[10px] tracking-[0.2em] uppercase mt-1 font-semibold">
                   Industrial Excellence
                 </span>
 
@@ -68,7 +68,7 @@ export default function Footer() {
 
             </Link>
 
-            <p className="text-[#5C4B3B] text-sm leading-relaxed mb-6 max-w-sm">
+            <p className="text-text-secondary text-sm leading-relaxed mb-6 max-w-sm">
               India's premier industrial machinery solutions
               provider. 28+ years of engineering excellence
               delivering cutting-edge machines across the
@@ -83,7 +83,7 @@ export default function Footer() {
                   <a
                     key={i}
                     href="#"
-                    className="w-10 h-10 rounded-xl bg-[#FAF6EF] border border-[#D6C7B2] flex items-center justify-center text-[#5C4B3B] hover:text-[#2563EB] hover:border-[#2563EB]/30 hover:bg-[#2563EB]/5 transition-all duration-300"
+                    className="w-10 h-10 rounded-xl bg-background border border-border-light flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
                   >
                     <Icon size={16} />
                   </a>
@@ -97,7 +97,7 @@ export default function Footer() {
           {/* Company */}
           <div>
 
-            <h4 className="text-[#2B2B2B] font-semibold mb-4 text-sm uppercase tracking-wider">
+            <h4 className="text-text-primary font-semibold mb-4 text-sm uppercase tracking-wider">
               Company
             </h4>
 
@@ -108,8 +108,9 @@ export default function Footer() {
 
                   <Link
                     to={link.path}
-                    className="text-[#5C4B3B] text-sm hover:text-[#2563EB] transition-colors flex items-center gap-1 group"
+                    className="text-text-secondary text-sm hover:text-primary transition-colors flex items-center gap-1 group"
                   >
+
                     {link.name}
 
                     <ArrowUpRight
@@ -129,7 +130,7 @@ export default function Footer() {
           {/* Products */}
           <div>
 
-            <h4 className="text-[#2B2B2B] font-semibold mb-4 text-sm uppercase tracking-wider">
+            <h4 className="text-text-primary font-semibold mb-4 text-sm uppercase tracking-wider">
               Products
             </h4>
 
@@ -140,8 +141,9 @@ export default function Footer() {
 
                   <Link
                     to={link.path}
-                    className="text-[#5C4B3B] text-sm hover:text-[#2563EB] transition-colors flex items-center gap-1 group"
+                    className="text-text-secondary text-sm hover:text-primary transition-colors flex items-center gap-1 group"
                   >
+
                     {link.name}
 
                     <ArrowUpRight
@@ -161,7 +163,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
 
-            <h4 className="text-[#2B2B2B] font-semibold mb-4 text-sm uppercase tracking-wider">
+            <h4 className="text-text-primary font-semibold mb-4 text-sm uppercase tracking-wider">
               Contact
             </h4>
 
@@ -171,10 +173,10 @@ export default function Footer() {
 
                 <MapPin
                   size={16}
-                  className="text-[#2563EB] mt-0.5 shrink-0"
+                  className="text-primary mt-0.5 shrink-0"
                 />
 
-                <span className="text-[#5C4B3B] text-sm">
+                <span className="text-text-secondary text-sm">
                   Coimbatore, Chennai, Bangalore,
                   Pune, Delhi
                 </span>
@@ -185,12 +187,12 @@ export default function Footer() {
 
                 <Phone
                   size={16}
-                  className="text-[#2563EB] shrink-0"
+                  className="text-primary shrink-0"
                 />
 
                 <a
                   href="tel:+919789360111"
-                  className="text-[#5C4B3B] text-sm hover:text-[#2563EB] transition-colors"
+                  className="text-text-secondary text-sm hover:text-primary transition-colors"
                 >
                   +91 9789 360 111
                 </a>
@@ -201,12 +203,12 @@ export default function Footer() {
 
                 <Mail
                   size={16}
-                  className="text-[#2563EB] shrink-0"
+                  className="text-primary shrink-0"
                 />
 
                 <a
                   href="mailto:info@velmachines.com"
-                  className="text-[#5C4B3B] text-sm hover:text-[#2563EB] transition-colors"
+                  className="text-text-secondary text-sm hover:text-primary transition-colors"
                 >
                   info@velmachines.com
                 </a>
@@ -220,9 +222,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-[#D6C7B2] flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-8 border-t border-border-light flex flex-col md:flex-row items-center justify-between gap-4">
 
-          <p className="text-[#5C4B3B] text-sm">
+          <p className="text-text-secondary text-sm">
             &copy; {new Date().getFullYear()} Vel Machines.
             All rights reserved.
           </p>
@@ -231,14 +233,14 @@ export default function Footer() {
 
             <a
               href="#"
-              className="text-[#5C4B3B] text-sm hover:text-[#2563EB] transition-colors"
+              className="text-text-secondary text-sm hover:text-primary transition-colors"
             >
               Privacy Policy
             </a>
 
             <a
               href="#"
-              className="text-[#5C4B3B] text-sm hover:text-[#2563EB] transition-colors"
+              className="text-text-secondary text-sm hover:text-primary transition-colors"
             >
               Terms of Service
             </a>

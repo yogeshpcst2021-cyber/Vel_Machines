@@ -44,12 +44,12 @@ export default function PageLoader() {
   if (!loading) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#FAF6EF] overflow-hidden">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background overflow-hidden">
 
       {/* Background Glow */}
-      <div className="absolute w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-[120px]" />
+      <div className="absolute w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
 
-      <div className="absolute w-[350px] h-[350px] bg-[#E9E1D3]/50 rounded-full blur-[100px]" />
+      <div className="absolute w-[350px] h-[350px] bg-beige-dark/50 rounded-full blur-[100px]" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center">
@@ -69,7 +69,7 @@ export default function PageLoader() {
               cy="50"
               r="45"
               fill="none"
-              stroke="#D6C7B2"
+              stroke="var(--color-border-light)"
               strokeWidth="2"
               strokeDasharray="180 360"
               strokeLinecap="round"
@@ -81,7 +81,7 @@ export default function PageLoader() {
               cy="50"
               r="45"
               fill="none"
-              stroke="#2563EB"
+              stroke="var(--color-primary)"
               strokeWidth="3"
               strokeDasharray="90 360"
               strokeLinecap="round"
@@ -92,7 +92,7 @@ export default function PageLoader() {
           {/* Logo */}
           <div className="absolute inset-0 flex items-center justify-center">
 
-            <div className="w-16 h-16 rounded-2xl bg-[#F5F0E6] border border-[#D6C7B2] shadow-xl flex items-center justify-center overflow-hidden">
+            <div className="w-16 h-16 rounded-2xl bg-surface border border-border-light shadow-xl flex items-center justify-center overflow-hidden">
 
               <img
                 src="/images/logo.png"
@@ -107,30 +107,28 @@ export default function PageLoader() {
         </div>
 
         {/* Brand Name */}
-        <h2 className="text-[#2B2B2B] font-bold text-2xl tracking-tight mb-1">
+        <h2 className="text-text-primary font-bold text-2xl tracking-tight mb-1">
           Vel Machines
         </h2>
 
-        <p className="text-[#5C4B3B] text-sm tracking-[0.2em] uppercase mb-6">
+        <p className="text-text-secondary text-sm tracking-[0.2em] uppercase mb-6">
           Industrial Excellence
         </p>
 
         {/* Progress Bar */}
-        <div className="w-60 h-2 bg-[#E9E1D3] rounded-full overflow-hidden border border-[#D6C7B2]">
+        <div className="w-60 h-2 bg-beige-dark rounded-full overflow-hidden border border-border-light">
 
           <div
-            className="h-full rounded-full transition-all duration-300 ease-out"
+            className="h-full rounded-full transition-all duration-300 ease-out gradient-primary"
             style={{
               width: `${progress}%`,
-              background:
-                'linear-gradient(90deg, #2563EB, #38BDF8)',
             }}
           />
 
         </div>
 
         {/* Percentage */}
-        <p className="text-[#5C4B3B] text-xs mt-3 font-semibold tracking-wide tabular-nums">
+        <p className="text-text-secondary text-xs mt-3 font-semibold tracking-wide tabular-nums">
           {progress}%
         </p>
 

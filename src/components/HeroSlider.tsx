@@ -92,13 +92,13 @@ export default function HeroSlider() {
       ))}
 
       {/* Premium Beige Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#F5F0E6]/90 via-[#F5F0E6]/65 to-[#FAF6EF]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/65 to-background" />
 
       {/* Side Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#F5F0E6]/70 via-transparent to-[#F5F0E6]/55" />
+      <div className="absolute inset-0 bg-gradient-to-r from-surface/70 via-transparent to-surface/55" />
 
       {/* Luxury Soft Glow */}
-      <div className="absolute inset-0 bg-[#E9E1D3]/10 backdrop-blur-[1px]" />
+      <div className="absolute inset-0 bg-beige-dark/10 backdrop-blur-[1px]" />
 
       {/* Slide Indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
@@ -109,8 +109,8 @@ export default function HeroSlider() {
             onClick={() => setCurrent(i)}
             className={`h-1 rounded-full transition-all duration-500 ${
               i === current
-                ? 'w-8 bg-[#2563EB]'
-                : 'w-4 bg-[#D6C7B2] hover:bg-[#A08B78]'
+                ? 'w-8 bg-primary'
+                : 'w-4 bg-border-light hover:bg-beige-dark'
             }`}
           />
         ))}
@@ -120,7 +120,7 @@ export default function HeroSlider() {
       {/* Left Arrow */}
       <button
         onClick={prev}
-        className="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#F5F0E6]/80 backdrop-blur border border-[#D6C7B2] items-center justify-center text-[#2B2B2B] hover:bg-[#2563EB]/10 hover:border-[#2563EB]/30 transition-all duration-300"
+        className="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-surface/80 backdrop-blur border border-border-light items-center justify-center text-text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-300"
       >
 
         <ChevronLeft size={22} />
@@ -130,7 +130,7 @@ export default function HeroSlider() {
       {/* Right Arrow */}
       <button
         onClick={next}
-        className="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#F5F0E6]/80 backdrop-blur border border-[#D6C7B2] items-center justify-center text-[#2B2B2B] hover:bg-[#2563EB]/10 hover:border-[#2563EB]/30 transition-all duration-300"
+        className="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-surface/80 backdrop-blur border border-border-light items-center justify-center text-text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-300"
       >
 
         <ChevronRight size={22} />

@@ -36,29 +36,29 @@ export default function FloatingBlobs() {
     >
 
       {/* Main Beige Glow */}
-      <div className="absolute top-[10%] left-[15%] w-[500px] h-[500px] bg-[#E9E1D3]/40 rounded-full blur-[120px] animate-pulse" />
+      <div className="absolute top-[10%] left-[15%] w-[500px] h-[500px] bg-beige-dark/40 rounded-full blur-[120px] animate-pulse" />
 
       {/* Warm Cream Glow */}
       <div
-        className="absolute top-[40%] right-[10%] w-[420px] h-[420px] bg-[#F5F0E6]/50 rounded-full blur-[100px] animate-pulse"
+        className="absolute top-[40%] right-[10%] w-[420px] h-[420px] bg-surface/50 rounded-full blur-[100px] animate-pulse"
         style={{ animationDelay: '2s' }}
       />
 
       {/* Soft Blue Accent */}
       <div
-        className="absolute bottom-[10%] left-[30%] w-[350px] h-[350px] bg-[#2563EB]/8 rounded-full blur-[100px] animate-pulse"
+        className="absolute bottom-[10%] left-[30%] w-[350px] h-[350px] bg-primary/8 rounded-full blur-[100px] animate-pulse"
         style={{ animationDelay: '4s' }}
       />
 
       {/* Sky Blue Glow */}
       <div
-        className="absolute top-[60%] right-[40%] w-[300px] h-[300px] bg-[#38BDF8]/10 rounded-full blur-[80px] animate-pulse"
+        className="absolute top-[60%] right-[40%] w-[300px] h-[300px] bg-primary-light/10 rounded-full blur-[80px] animate-pulse"
         style={{ animationDelay: '3s' }}
       />
 
       {/* Extra Luxury Warm Glow */}
       <div
-        className="absolute bottom-[20%] right-[15%] w-[450px] h-[450px] bg-[#EFE7DA]/35 rounded-full blur-[120px] animate-pulse"
+        className="absolute bottom-[20%] right-[15%] w-[450px] h-[450px] bg-beige-soft/35 rounded-full blur-[120px] animate-pulse"
         style={{ animationDelay: '5s' }}
       />
 

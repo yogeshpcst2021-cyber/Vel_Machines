@@ -79,7 +79,7 @@ export default function Products() {
   });
 
   return (
-    <div className="pt-24 pb-12 bg-[#FAF6EF]">
+    <div className="pt-24 pb-12 bg-background">
 
       {/* Hero */}
       <section className="relative py-20 overflow-hidden">
@@ -93,7 +93,7 @@ export default function Products() {
             style={{ objectPosition: 'center 30%' }}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F5F0E6]/90 via-[#FAF6EF]/80 to-[#FAF6EF]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-surface/90 via-background/80 to-background" />
 
         </div>
 
@@ -101,25 +101,31 @@ export default function Products() {
 
           <div className="text-center max-w-3xl mx-auto">
 
-            <h1 className="text-4xl md:text-6xl font-bold text-[#2B2B2B] mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
+
               Our{' '}
-              <span className="bg-gradient-to-r from-[#2563EB] to-[#38BDF8] bg-clip-text text-transparent">
+
+              <span className="text-gradient-primary">
                 Products
               </span>
+
             </h1>
 
-            <p className="text-[#5C4B3B] text-lg leading-relaxed">
+            <p className="text-text-secondary text-lg leading-relaxed">
+
               Browse our comprehensive range of industrial
               machinery built for precision and performance
+
             </p>
 
           </div>
 
         </div>
+
       </section>
 
       {/* Products */}
-      <section className="py-12 bg-[#F5F0E6]">
+      <section className="py-12 bg-surface">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -136,10 +142,10 @@ export default function Products() {
 
                     <Filter
                       size={18}
-                      className="text-[#2563EB]"
+                      className="text-primary"
                     />
 
-                    <h3 className="text-[#2B2B2B] font-semibold">
+                    <h3 className="text-text-primary font-semibold">
                       Filters
                     </h3>
 
@@ -150,7 +156,7 @@ export default function Products() {
 
                     <Search
                       size={16}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 text-[#5C4B3B]"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary"
                     />
 
                     <input
@@ -160,7 +166,7 @@ export default function Products() {
                       onChange={(e) =>
                         setSearchQuery(e.target.value)
                       }
-                      className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-[#D6C7B2] text-[#2B2B2B] text-sm placeholder-[#A08B78] focus:outline-none focus:border-[#2563EB]/50 transition-all"
+                      className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-border-light text-text-primary text-sm placeholder:text-text-secondary/50 focus:outline-none focus:border-primary/50 transition-all"
                     />
 
                   </div>
@@ -174,8 +180,8 @@ export default function Products() {
                       }
                       className={`w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
                         selectedDivision === 'all'
-                          ? 'bg-[#2563EB]/10 text-[#2563EB] border border-[#2563EB]/15'
-                          : 'text-[#5C4B3B] hover:bg-[#EFE7DA] hover:text-[#2B2B2B]'
+                          ? 'bg-primary/10 text-primary border border-primary/15'
+                          : 'text-text-secondary hover:bg-beige-soft hover:text-text-primary'
                       }`}
                     >
                       All Divisions
@@ -192,8 +198,8 @@ export default function Products() {
                         className={`w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
                           selectedDivision ===
                           String(div.id)
-                            ? 'bg-[#2563EB]/10 text-[#2563EB] border border-[#2563EB]/15'
-                            : 'text-[#5C4B3B] hover:bg-[#EFE7DA] hover:text-[#2B2B2B]'
+                            ? 'bg-primary/10 text-primary border border-primary/15'
+                            : 'text-text-secondary hover:bg-beige-soft hover:text-text-primary'
                         }`}
                       >
                         {div.name}
@@ -217,15 +223,15 @@ export default function Products() {
                   {[1, 2, 3, 4].map((i) => (
                     <GlassCard key={i}>
 
-                      <div className="h-48 bg-gradient-to-br from-[#E9E1D3] to-[#EFE7DA] rounded-t-2xl" />
+                      <div className="h-48 bg-gradient-to-br from-beige-dark to-beige-soft rounded-t-2xl" />
 
                       <div className="p-6 space-y-3">
 
-                        <div className="h-4 w-20 bg-[#2563EB]/30 rounded" />
+                        <div className="h-4 w-20 bg-primary/30 rounded" />
 
-                        <div className="h-5 w-3/4 bg-[#E9E1D3] rounded" />
+                        <div className="h-5 w-3/4 bg-beige-dark rounded" />
 
-                        <div className="h-4 w-full bg-[#EFE7DA] rounded" />
+                        <div className="h-4 w-full bg-beige-soft rounded" />
 
                       </div>
 
@@ -236,15 +242,15 @@ export default function Products() {
               ) : filtered.length === 0 ? (
                 <div className="text-center py-20">
 
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[#EFE7DA] flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-beige-soft flex items-center justify-center">
 
-                    <span className="text-[#D6C7B2] font-bold text-3xl">
+                    <span className="text-border-light font-bold text-3xl">
                       V
                     </span>
 
                   </div>
 
-                  <p className="text-[#5C4B3B]">
+                  <p className="text-text-secondary">
                     No products found matching your
                     criteria.
                   </p>
@@ -280,21 +286,24 @@ export default function Products() {
 
                         <div className="p-6">
 
-                          <span className="text-[#2563EB] text-xs font-medium uppercase tracking-wider">
+                          <span className="text-primary text-xs font-medium uppercase tracking-wider">
                             {product.category}
                           </span>
 
-                          <h3 className="text-[#2B2B2B] font-semibold text-lg mt-2 mb-2 group-hover:text-[#2563EB] transition-colors">
+                          <h3 className="text-text-primary font-semibold text-lg mt-2 mb-2 group-hover:text-primary transition-colors">
                             {product.name}
                           </h3>
 
-                          <p className="text-[#5C4B3B] text-sm line-clamp-2">
+                          <p className="text-text-secondary text-sm line-clamp-2">
                             {product.description}
                           </p>
 
-                          <div className="flex items-center gap-1 text-[#2563EB] text-sm font-medium mt-4">
+                          <div className="flex items-center gap-1 text-primary text-sm font-medium mt-4">
+
                             View Details
+
                             <ChevronRight size={14} />
+
                           </div>
 
                         </div>
@@ -323,7 +332,7 @@ export default function Products() {
 
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#FAF6EF] border border-[#D6C7B2] shadow-2xl"
+            className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl bg-background border border-border-light shadow-2xl"
           >
 
             {/* Close */}
@@ -331,7 +340,7 @@ export default function Products() {
               onClick={() =>
                 setSelectedProduct(null)
               }
-              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-xl bg-[#EFE7DA] border border-[#D6C7B2] flex items-center justify-center text-[#5C4B3B] hover:text-[#2B2B2B] transition-colors"
+              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-xl bg-beige-soft border border-border-light flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors"
             >
               <X size={18} />
             </button>
@@ -355,15 +364,15 @@ export default function Products() {
             {/* Content */}
             <div className="p-8">
 
-              <span className="text-[#2563EB] text-sm font-medium uppercase tracking-wider">
+              <span className="text-primary text-sm font-medium uppercase tracking-wider">
                 {selectedProduct.category}
               </span>
 
-              <h2 className="text-3xl font-bold text-[#2B2B2B] mt-2 mb-4">
+              <h2 className="text-3xl font-bold text-text-primary mt-2 mb-4">
                 {selectedProduct.name}
               </h2>
 
-              <p className="text-[#5C4B3B] leading-relaxed mb-8">
+              <p className="text-text-secondary leading-relaxed mb-8">
                 {selectedProduct.description}
               </p>
 
@@ -371,7 +380,7 @@ export default function Products() {
               {selectedProduct.specs && (
                 <div className="mb-8">
 
-                  <h3 className="text-[#2B2B2B] font-semibold mb-4">
+                  <h3 className="text-text-primary font-semibold mb-4">
                     Specifications
                   </h3>
 
@@ -383,14 +392,14 @@ export default function Products() {
                       ([key, val]: [string, any]) => (
                         <div
                           key={key}
-                          className="flex justify-between px-4 py-3 rounded-xl bg-white border border-[#D6C7B2]"
+                          className="flex justify-between px-4 py-3 rounded-xl bg-white border border-border-light"
                         >
 
-                          <span className="text-[#5C4B3B] text-sm capitalize">
+                          <span className="text-text-secondary text-sm capitalize">
                             {key.replace(/_/g, ' ')}
                           </span>
 
-                          <span className="text-[#2B2B2B] text-sm font-medium">
+                          <span className="text-text-primary text-sm font-medium">
                             {val}
                           </span>
 
@@ -408,21 +417,20 @@ export default function Products() {
 
                 <a
                   href={`/contact?product=${selectedProduct.name}`}
-                  className="flex-1 px-6 py-3.5 rounded-xl font-semibold text-white text-center transition-all duration-300 hover:shadow-lg hover:shadow-[#2563EB]/20"
-                  style={{
-                    background:
-                      'linear-gradient(135deg, #2563EB, #38BDF8)',
-                  }}
+                  className="flex-1 px-6 py-3.5 rounded-xl font-semibold text-white text-center transition-all duration-300 hover:shadow-lg gradient-primary"
                 >
                   Send Enquiry
                 </a>
 
                 <a
                   href="tel:+919789360111"
-                  className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#EFE7DA] border border-[#D6C7B2] text-[#2B2B2B] font-semibold hover:bg-[#E9E1D3] transition-all"
+                  className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-beige-soft border border-border-light text-text-primary font-semibold hover:bg-beige-dark transition-all"
                 >
+
                   <Phone size={18} />
+
                   Call Now
+
                 </a>
 
               </div>

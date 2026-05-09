@@ -81,7 +81,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-24 pb-12 bg-[#FAF6EF]">
+    <div className="pt-24 pb-12 bg-background">
 
       {/* Hero */}
       <section className="relative py-20 overflow-hidden">
@@ -95,7 +95,7 @@ export default function Contact() {
             style={{ objectPosition: 'center 30%' }}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F5F0E6]/90 via-[#FAF6EF]/80 to-[#FAF6EF]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-surface/90 via-background/80 to-background" />
 
         </div>
 
@@ -103,24 +103,31 @@ export default function Contact() {
 
           <div className="text-center max-w-3xl mx-auto">
 
-            <h1 className="text-4xl md:text-6xl font-bold text-[#2B2B2B] mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
+
               Get in{' '}
-              <span className="bg-gradient-to-r from-[#2563EB] to-[#38BDF8] bg-clip-text text-transparent">
+
+              <span className="text-gradient-primary">
                 Touch
               </span>
+
             </h1>
 
-            <p className="text-[#5C4B3B] text-lg leading-relaxed">
+            <p className="text-text-secondary text-lg leading-relaxed">
+
               Have a question or need a quote? Reach out to us
               and our team will respond within 24 hours.
+
             </p>
 
           </div>
+
         </div>
+
       </section>
 
       {/* Contact Section */}
-      <section className="py-12 bg-[#F5F0E6]">
+      <section className="py-12 bg-surface">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -138,11 +145,11 @@ export default function Contact() {
 
                       <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
 
-                      <h3 className="text-[#2B2B2B] font-semibold text-xl mb-2">
+                      <h3 className="text-text-primary font-semibold text-xl mb-2">
                         Message Sent!
                       </h3>
 
-                      <p className="text-[#5C4B3B]">
+                      <p className="text-text-secondary">
                         Thank you for reaching out. We'll contact you shortly.
                       </p>
 
@@ -150,7 +157,7 @@ export default function Contact() {
                   ) : (
                     <>
 
-                      <h3 className="text-[#2B2B2B] font-semibold text-xl mb-6">
+                      <h3 className="text-text-primary font-semibold text-xl mb-6">
                         Send us a Message
                       </h3>
 
@@ -159,7 +166,8 @@ export default function Contact() {
                         <div className="grid sm:grid-cols-2 gap-5">
 
                           <div>
-                            <label className="block text-[#5C4B3B] text-sm mb-2">
+
+                            <label className="block text-text-secondary text-sm mb-2">
                               Full Name *
                             </label>
 
@@ -173,13 +181,15 @@ export default function Contact() {
                                   name: e.target.value,
                                 })
                               }
-                              className="w-full px-4 py-3 rounded-xl bg-white border border-[#D6C7B2] text-[#2B2B2B] placeholder-[#A08B78] focus:outline-none focus:border-[#2563EB]/50 transition-all"
+                              className="w-full px-4 py-3 rounded-xl bg-white border border-border-light text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-primary/50 transition-all"
                               placeholder="Your name"
                             />
+
                           </div>
 
                           <div>
-                            <label className="block text-[#5C4B3B] text-sm mb-2">
+
+                            <label className="block text-text-secondary text-sm mb-2">
                               Email *
                             </label>
 
@@ -193,9 +203,10 @@ export default function Contact() {
                                   email: e.target.value,
                                 })
                               }
-                              className="w-full px-4 py-3 rounded-xl bg-white border border-[#D6C7B2] text-[#2B2B2B] placeholder-[#A08B78] focus:outline-none focus:border-[#2563EB]/50 transition-all"
+                              className="w-full px-4 py-3 rounded-xl bg-white border border-border-light text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-primary/50 transition-all"
                               placeholder="your@email.com"
                             />
+
                           </div>
 
                         </div>
@@ -203,7 +214,8 @@ export default function Contact() {
                         <div className="grid sm:grid-cols-2 gap-5">
 
                           <div>
-                            <label className="block text-[#5C4B3B] text-sm mb-2">
+
+                            <label className="block text-text-secondary text-sm mb-2">
                               Phone
                             </label>
 
@@ -216,13 +228,15 @@ export default function Contact() {
                                   phone: e.target.value,
                                 })
                               }
-                              className="w-full px-4 py-3 rounded-xl bg-white border border-[#D6C7B2] text-[#2B2B2B] placeholder-[#A08B78] focus:outline-none focus:border-[#2563EB]/50 transition-all"
+                              className="w-full px-4 py-3 rounded-xl bg-white border border-border-light text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-primary/50 transition-all"
                               placeholder="+91 98765 43210"
                             />
+
                           </div>
 
                           <div>
-                            <label className="block text-[#5C4B3B] text-sm mb-2">
+
+                            <label className="block text-text-secondary text-sm mb-2">
                               Company
                             </label>
 
@@ -235,16 +249,17 @@ export default function Contact() {
                                   company: e.target.value,
                                 })
                               }
-                              className="w-full px-4 py-3 rounded-xl bg-white border border-[#D6C7B2] text-[#2B2B2B] placeholder-[#A08B78] focus:outline-none focus:border-[#2563EB]/50 transition-all"
+                              className="w-full px-4 py-3 rounded-xl bg-white border border-border-light text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-primary/50 transition-all"
                               placeholder="Your company"
                             />
+
                           </div>
 
                         </div>
 
                         <div>
 
-                          <label className="block text-[#5C4B3B] text-sm mb-2">
+                          <label className="block text-text-secondary text-sm mb-2">
                             Message *
                           </label>
 
@@ -258,7 +273,7 @@ export default function Contact() {
                                 message: e.target.value,
                               })
                             }
-                            className="w-full px-4 py-3 rounded-xl bg-white border border-[#D6C7B2] text-[#2B2B2B] placeholder-[#A08B78] focus:outline-none focus:border-[#2563EB]/50 transition-all resize-none"
+                            className="w-full px-4 py-3 rounded-xl bg-white border border-border-light text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-primary/50 transition-all resize-none"
                             placeholder="How can we help you?"
                           />
 
@@ -266,14 +281,13 @@ export default function Contact() {
 
                         <button
                           type="submit"
-                          className="w-full px-6 py-3.5 rounded-xl font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#2563EB]/20"
-                          style={{
-                            background:
-                              'linear-gradient(135deg, #2563EB, #38BDF8)',
-                          }}
+                          className="w-full px-6 py-3.5 rounded-xl font-semibold text-white transition-all duration-300 hover:shadow-lg gradient-primary"
                         >
+
                           <Send size={18} className="inline mr-2" />
+
                           Send Message
+
                         </button>
 
                       </form>
@@ -296,60 +310,72 @@ export default function Contact() {
 
                   <div className="flex items-start gap-4">
 
-                    <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center shrink-0">
-                      <Mail size={18} className="text-[#2563EB]" />
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+
+                      <Mail size={18} className="text-primary" />
+
                     </div>
 
                     <div>
-                      <h4 className="text-[#2B2B2B] font-medium mb-1">
+
+                      <h4 className="text-text-primary font-medium mb-1">
                         Email
                       </h4>
 
                       <a
                         href="mailto:info@velmachines.com"
-                        className="text-[#5C4B3B] text-sm hover:text-[#2563EB] transition-colors"
+                        className="text-text-secondary text-sm hover:text-primary transition-colors"
                       >
                         info@velmachines.com
                       </a>
+
                     </div>
 
                   </div>
 
                   <div className="flex items-start gap-4">
 
-                    <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center shrink-0">
-                      <Phone size={18} className="text-[#2563EB]" />
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+
+                      <Phone size={18} className="text-primary" />
+
                     </div>
 
                     <div>
-                      <h4 className="text-[#2B2B2B] font-medium mb-1">
+
+                      <h4 className="text-text-primary font-medium mb-1">
                         Phone
                       </h4>
 
                       <a
                         href="tel:+919789360111"
-                        className="text-[#5C4B3B] text-sm hover:text-[#2563EB] transition-colors"
+                        className="text-text-secondary text-sm hover:text-primary transition-colors"
                       >
                         +91 9789 360 111
                       </a>
+
                     </div>
 
                   </div>
 
                   <div className="flex items-start gap-4">
 
-                    <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center shrink-0">
-                      <Clock size={18} className="text-[#2563EB]" />
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+
+                      <Clock size={18} className="text-primary" />
+
                     </div>
 
                     <div>
-                      <h4 className="text-[#2B2B2B] font-medium mb-1">
+
+                      <h4 className="text-text-primary font-medium mb-1">
                         Working Hours
                       </h4>
 
-                      <p className="text-[#5C4B3B] text-sm">
+                      <p className="text-text-secondary text-sm">
                         Mon - Sat: 9:00 AM - 6:00 PM
                       </p>
+
                     </div>
 
                   </div>
@@ -358,10 +384,13 @@ export default function Contact() {
                     href="https://wa.me/919789360111"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-[#E8F8F0] border border-[#B7E4C7] text-green-700 font-medium hover:bg-[#DFF4E8] transition-all"
+                    className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-green-50 border border-green-200 text-green-700 font-medium hover:bg-green-100 transition-all"
                   >
+
                     <MessageCircle size={18} />
+
                     Chat on WhatsApp
+
                   </a>
 
                 </div>
@@ -374,23 +403,23 @@ export default function Contact() {
                 {locations.map((loc) => (
                   <div
                     key={loc.city}
-                    className="rounded-xl bg-white border border-[#D6C7B2] p-4 hover:bg-[#FAF6EF] hover:border-[#2563EB]/20 transition-all cursor-pointer"
+                    className="rounded-xl bg-white border border-border-light p-4 hover:bg-background hover:border-primary/20 transition-all cursor-pointer"
                   >
 
                     <div className="flex items-start gap-3">
 
                       <MapPin
                         size={16}
-                        className="text-[#2563EB] mt-0.5 shrink-0"
+                        className="text-primary mt-0.5 shrink-0"
                       />
 
                       <div>
 
-                        <h4 className="text-[#2B2B2B] font-medium text-sm">
+                        <h4 className="text-text-primary font-medium text-sm">
                           {loc.city}
                         </h4>
 
-                        <p className="text-[#5C4B3B] text-xs mt-1">
+                        <p className="text-text-secondary text-xs mt-1">
                           {loc.address}
                         </p>
 

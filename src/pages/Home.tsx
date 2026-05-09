@@ -132,9 +132,6 @@ function ProductCarousel({ products }: { products: any[] }) {
 
   const [isDragging, setIsDragging] = useState(false);
 
-  const dragStartX = useRef(0);
-  const dragScrollLeft = useRef(0);
-
   const cardWidth = 336;
 
   const maxIndex = Math.max(0, products.length - 1);
@@ -168,7 +165,7 @@ function ProductCarousel({ products }: { products: any[] }) {
   );
 
   return (
-    <section className="py-20 relative bg-[#FAF6EF]">
+    <section className="py-20 relative bg-background">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -182,7 +179,7 @@ function ProductCarousel({ products }: { products: any[] }) {
           <button
             onClick={goPrev}
             disabled={currentIndex === 0}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-20 w-12 h-12 rounded-full bg-[#F5F0E6] border border-[#D6C7B2] shadow-lg flex items-center justify-center text-[#2B2B2B] hover:bg-[#2563EB] hover:text-white transition-all duration-300"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-20 w-12 h-12 rounded-full bg-surface border border-border-light shadow-lg flex items-center justify-center text-text-primary hover:bg-primary hover:text-white transition-all duration-300"
           >
             <ChevronLeft size={22} />
           </button>
@@ -190,7 +187,7 @@ function ProductCarousel({ products }: { products: any[] }) {
           <button
             onClick={goNext}
             disabled={currentIndex >= maxIndex}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-20 w-12 h-12 rounded-full bg-[#F5F0E6] border border-[#D6C7B2] shadow-lg flex items-center justify-center text-[#2B2B2B] hover:bg-[#2563EB] hover:text-white transition-all duration-300"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-20 w-12 h-12 rounded-full bg-surface border border-border-light shadow-lg flex items-center justify-center text-text-primary hover:bg-primary hover:text-white transition-all duration-300"
           >
             <ChevronRight size={22} />
           </button>
@@ -223,7 +220,7 @@ function ProductCarousel({ products }: { products: any[] }) {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
 
-                      <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#F5F0E6]/90 text-[#2563EB] text-xs font-semibold uppercase tracking-wider">
+                      <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-surface/90 text-primary text-xs font-semibold uppercase tracking-wider">
                         {product.category}
                       </div>
 
@@ -231,17 +228,17 @@ function ProductCarousel({ products }: { products: any[] }) {
 
                     <div className="p-6">
 
-                      <h3 className="text-[#2B2B2B] font-semibold text-lg mb-2">
+                      <h3 className="text-text-primary font-semibold text-lg mb-2">
                         {product.name}
                       </h3>
 
-                      <p className="text-[#5C4B3B] text-sm mb-4">
+                      <p className="text-text-secondary text-sm mb-4">
                         {product.description}
                       </p>
 
                       <Link
                         to={`/products?id=${product.id}`}
-                        className="inline-flex items-center gap-1.5 text-[#2563EB] text-sm font-medium hover:text-[#38BDF8] transition-colors"
+                        className="inline-flex items-center gap-1.5 text-primary text-sm font-medium hover:text-primary-light transition-colors"
                       >
                         View Details
                         <ChevronRight size={14} />
@@ -262,15 +259,15 @@ function ProductCarousel({ products }: { products: any[] }) {
 
                   <GlassCard className="h-full">
 
-                    <div className="h-52 bg-gradient-to-br from-[#E9E1D3] to-[#EFE7DA] rounded-t-2xl" />
+                    <div className="h-52 bg-gradient-to-br from-beige-dark to-beige-soft rounded-t-2xl" />
 
                     <div className="p-6 space-y-3">
 
-                      <div className="h-3 w-16 bg-[#2563EB]/30 rounded" />
+                      <div className="h-3 w-16 bg-primary/30 rounded" />
 
-                      <div className="h-5 w-3/4 bg-[#E9E1D3] rounded" />
+                      <div className="h-5 w-3/4 bg-beige-dark rounded" />
 
-                      <div className="h-4 w-full bg-[#EFE7DA] rounded" />
+                      <div className="h-4 w-full bg-beige-soft rounded" />
 
                     </div>
 
@@ -300,7 +297,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative bg-[#FAF6EF]">
+    <div className="relative bg-background">
 
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -313,19 +310,19 @@ export default function Home() {
 
             <div>
 
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F5F0E6]/80 border border-[#D6C7B2] text-[#2B2B2B] text-sm font-medium mb-6 backdrop-blur-sm">
-                <span className="w-2 h-2 rounded-full bg-[#38BDF8] animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface/80 border border-border-light text-text-primary text-sm font-medium mb-6 backdrop-blur-sm">
+                <span className="w-2 h-2 rounded-full bg-primary-light animate-pulse" />
                 Industrial Machinery Leaders Since 1996
               </div>
 
-              <h1 className="text-5xl md:text-7xl font-bold text-[#2B2B2B] leading-tight mb-6">
+              <h1 className="text-5xl md:text-7xl font-bold text-text-primary leading-tight mb-6">
                 Your Machine is{' '}
-                <span className="bg-gradient-to-r from-[#2563EB] to-[#38BDF8] bg-clip-text text-transparent">
+                <span className="text-gradient-primary">
                   Your Capital
                 </span>
               </h1>
 
-              <p className="text-[#5C4B3B] text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
+              <p className="text-text-secondary text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
                 India's trusted partner for premium industrial
                 machines. From CNC to grinding, we deliver
                 precision engineering that powers your growth.
@@ -335,11 +332,7 @@ export default function Home() {
 
                 <Link
                   to="/products"
-                  className="group px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
-                  style={{
-                    background:
-                      'linear-gradient(135deg, #2563EB, #38BDF8)',
-                  }}
+                  className="group px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2 gradient-primary"
                 >
                   Explore Products
                   <ArrowRight size={18} />
@@ -347,7 +340,7 @@ export default function Home() {
 
                 <Link
                   to="/contact"
-                  className="px-8 py-4 rounded-xl bg-[#F5F0E6]/80 border border-[#D6C7B2] text-[#2B2B2B] font-semibold hover:bg-[#EFE7DA] transition-all duration-300 flex items-center justify-center gap-2"
+                  className="px-8 py-4 rounded-xl bg-surface/80 border border-border-light text-text-primary font-semibold hover:bg-beige-soft transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   Get a Quote
                 </Link>

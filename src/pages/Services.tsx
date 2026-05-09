@@ -82,7 +82,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="pt-24 pb-12 bg-[#FAF6EF]">
+    <div className="pt-24 pb-12 bg-background">
 
       {/* Hero */}
       <section className="relative py-20 overflow-hidden">
@@ -96,7 +96,7 @@ export default function Services() {
             style={{ objectPosition: 'center 30%' }}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F5F0E6]/90 via-[#FAF6EF]/80 to-[#FAF6EF]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-surface/90 via-background/80 to-background" />
 
         </div>
 
@@ -104,25 +104,31 @@ export default function Services() {
 
           <div className="text-center max-w-3xl mx-auto">
 
-            <h1 className="text-4xl md:text-6xl font-bold text-[#2B2B2B] mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
+
               Our{' '}
-              <span className="bg-gradient-to-r from-[#2563EB] to-[#38BDF8] bg-clip-text text-transparent">
+
+              <span className="text-gradient-primary">
                 Services
               </span>
+
             </h1>
 
-            <p className="text-[#5C4B3B] text-lg leading-relaxed">
+            <p className="text-text-secondary text-lg leading-relaxed">
+
               Complete lifecycle support for your industrial
               machinery — from installation to retirement
+
             </p>
 
           </div>
 
         </div>
+
       </section>
 
       {/* Services Grid */}
-      <section className="py-12 bg-[#F5F0E6]">
+      <section className="py-12 bg-surface">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -136,20 +142,20 @@ export default function Services() {
                   <div className="flex items-start gap-5">
 
                     {/* Icon */}
-                    <div className="w-14 h-14 rounded-2xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center shrink-0">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
 
-                      <service.icon className="w-7 h-7 text-[#2563EB]" />
+                      <service.icon className="w-7 h-7 text-primary" />
 
                     </div>
 
                     {/* Content */}
                     <div>
 
-                      <h3 className="text-[#2B2B2B] font-semibold text-xl mb-3">
+                      <h3 className="text-text-primary font-semibold text-xl mb-3">
                         {service.title}
                       </h3>
 
-                      <p className="text-[#5C4B3B] text-sm leading-relaxed mb-5">
+                      <p className="text-text-secondary text-sm leading-relaxed mb-5">
                         {service.desc}
                       </p>
 
@@ -159,7 +165,7 @@ export default function Services() {
                         {service.features.map((feat) => (
                           <span
                             key={feat}
-                            className="px-3 py-1 rounded-lg bg-[#FAF6EF] border border-[#D6C7B2] text-[#5C4B3B] text-xs"
+                            className="px-3 py-1 rounded-lg bg-background border border-border-light text-text-secondary text-xs"
                           >
                             {feat}
                           </span>
